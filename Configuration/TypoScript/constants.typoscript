@@ -1,0 +1,10 @@
+# Include basic powermail typoscript
+@import 'EXT:powermail/Configuration/TypoScript/Main/constants.typoscript'
+
+plugin.tx_powermail {
+    view {
+        templateRootPath = EXT:powermail_setup/Resources/Private/Templates/
+        partialRootPath = EXT:powermail_setup/Resources/Private/Partials/
+        layoutRootPath = EXT:powermail_setup/Resources/Private/Layouts/
+    }
+}

@@ -1,0 +1,2 @@
+# Include basic powermail typoscript
+@import 'EXT:powermail/Configuration/TypoScript/Main/setup.typoscript'
