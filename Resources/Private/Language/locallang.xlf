@@ -18,6 +18,12 @@
 			<trans-unit id="form.errors.list.description.single" resname="form.errors.list.description.single">
 				<source>There were an error when filling out the form. Please fix it and resubmit the corrected form.</source>
 			</trans-unit>
+			<trans-unit id="form.steps.next.label" resname="form.steps.next.label">
+				<source>Next step: %s</source>
+			</trans-unit>
+			<trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
+				<source>Previous step: %s</source>
+			</trans-unit>
 
 			<!-- UNUSED -->
 
@@ -29,12 +35,6 @@
 			</trans-unit>
 			<trans-unit id="form.errors.rendering.message.requiredAttribute" resname="form.errors.rendering.message.requiredAttribute">
 				<source>Configuration parameter "%s" is missing but required. Please adjust your field configuration.</source>
-			</trans-unit>
-			<trans-unit id="form.steps.next.label" resname="form.steps.next.label">
-				<source>Next step: %s</source>
-			</trans-unit>
-			<trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
-				<source>Previous step: %s</source>
 			</trans-unit>
 			<trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
 				<source>One of the following options must be selected.</source>

@@ -4,11 +4,7 @@
 
 		This partial renders an error message prefixed with an icon.
 
-		Hand over the id of the field (fieldId) to check for and render the corresponding error message
-		Example: <f:render partial="Misc/FieldError" arguments="{fieldId:fieldConfiguration.id}
-
-		Variables:
-		- fieldId | mandatory
+		Hand over the id of the field (id) to check for and render the corresponding error message
 	-->
 </f:comment>
 
@@ -16,9 +12,9 @@
 	<f:if condition="{validationResults.flattenedErrors}">
 		<f:for each="{validationResults.flattenedErrors}" as="errors">
 			<f:for each="{errors}" as="singleError">
-				<f:if condition="{singleError.arguments.marker} == {fieldId}">
-					<div class="powermail_field_error" id="powermail_error_{fieldId}">
-						<span class="powermail_field_error__icon icon icon-attention" aria-hidden="true"></span>
+				<f:if condition="{singleError.arguments.marker} == {id}">
+					<div class="powermail_field_error" id="powermail_error_{id}">
+						<span class="powermail_field_error__icon" aria-hidden="true"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span>
 						<span class="powermail_field_error__message"><f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></span>
 					</div>
 				</f:if>

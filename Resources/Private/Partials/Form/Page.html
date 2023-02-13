@@ -5,11 +5,18 @@
 		<legend class="powermail_legend">{page.title}</legend>
 	</f:if>
 
-	<div class="grid-x grid-padding-x">
-		<f:for each="{page.fields}" as="field" iteration="iteration">
-			<f:render partial="Form/RenderField" arguments="{powermailField:field}" />
-		</f:for>
-	</div>
+	<f:comment>
+		<!--
+            FIELD ERROR - generate rendered error message
+        -->
+	</f:comment>
+	<f:variable name="fieldError"><f:spaceless><f:render partial="Misc/FieldError" arguments="{id:field.marker}" /></f:spaceless></f:variable>
+
+	<f:for each="{page.fields}" as="field" iteration="iteration">
+		<vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
+			<f:render partial="Form/Field/{vh:String.Upper(string:field.type)}" arguments="{field:field, fieldError:fieldError}"/>
+		</vh:misc.createRowTags>
+	</f:for>
 
 	<f:comment>
 		<!--
@@ -28,11 +35,11 @@
 		<div class="powermail_form__button powermail_fieldwrap powermail_tab_navigation">
 			<f:if condition="!{iterationPages.isFirst}">
 				<f:variable name="previousPage"><v:variable.get name="form.pages.{iterationPages.index - 1}" /></f:variable>
-				<button type="button" class="powermail_form__button active" data-powermail-morestep-show="{iterationPages.index - 1}" aria-label="{f:translate(key: 'LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.steps.prev.label', arguments:{0:previousPage.title})}">&lt;</button>
+				<button type="button" class="powermail_form__button active" data-powermail-morestep-show="{iterationPages.index - 1}" aria-label="{f:translate(key: 'LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.steps.prev.label', arguments:{0:previousPage.title})}">&lt;</button>
 			</f:if>
 			<f:if condition="!{iterationPages.isLast}">
 				<f:variable name="nextPage"><v:variable.get name="form.pages.{iterationPages.cycle}" /></f:variable>
-				<button type="button" class="powermail_form__button active" data-powermail-morestep-show="{iterationPages.cycle}" aria-label="{f:translate(key: 'LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.steps.next.label', arguments:{0:nextPage.title})}">&gt;</button>
+				<button type="button" class="powermail_form__button active" data-powermail-morestep-show="{iterationPages.cycle}" aria-label="{f:translate(key: 'LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.steps.next.label', arguments:{0:nextPage.title})}">&gt;</button>
 			</f:if>
 		</div>
 	</f:if>

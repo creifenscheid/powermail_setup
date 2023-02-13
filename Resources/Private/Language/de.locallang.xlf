@@ -23,6 +23,14 @@
 				<source>There were an error when filling out the form. Please fix it and resubmit the corrected form.</source>
 				<target>Beim Ausfüllen des Formulars trat ein Fehler auf. Bitte beheben Sie diesen und senden Sie das korrigierte Formular erneut ab.</target>
 			</trans-unit>
+			<trans-unit id="form.steps.next.label" resname="form.steps.next.label">
+				<source>Next step: %s</source>
+				<target>Nächster Schritt: %s</target>
+			</trans-unit>
+			<trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
+				<source>Previous step: %s</source>
+				<target>Vorheriger Schritt: %s</target>
+			</trans-unit>
 
 			<!-- UNUSED -->
 
@@ -37,14 +45,6 @@
 			<trans-unit id="form.errors.rendering.message.requiredAttribute" resname="form.errors.rendering.message.requiredAttribute">
 				<source>Configuration parameter "%s" is missing but required. Please adjust your field configuration.</source>
 				<target>Der Konfigurationsparameter "%s" fehlt, ist aber erforderlich. Bitte passen Sie Ihre Feldkonfiguration an.</target>
-			</trans-unit>
-			<trans-unit id="form.steps.next.label" resname="form.steps.next.label">
-				<source>Next step: %s</source>
-				<target>Nächster Schritt: %s</target>
-			</trans-unit>
-			<trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
-				<source>Previous step: %s</source>
-				<target>Vorheriger Schritt: %s</target>
 			</trans-unit>
 			<trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
 				<source>One of the following options must be selected.</source>

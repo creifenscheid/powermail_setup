@@ -13,7 +13,7 @@
 <f:form.validationResults>
 	<f:if condition="{validationResults.flattenedErrors}">
 		<div class="powermail_form_errors">
-			<h4 class="powermail_form_errors__header"><span class="icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
+			<h4 class="powermail_form_errors__header"><span class="powermail_form_errors__icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="powermail_form_errors__wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
 
 			<f:variable name="errorCount" value="{f:count(subject:validationResults.flattenedErrors)}"/>
 
