@@ -1,0 +1,46 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+<f:if condition="{label}">
+
+	<f:variable name="classes" value="powermail_label{f:if(condition:hideLabel, then: ' sr-only')}" />
+	<f:variable name="id" value="powermail_label_{fieldId}" />
+	<f:variable name="for" value="powermail_label_{fieldId}" />
+
+	<f:switch expression="{tagToUse}">
+		<f:case value="legend">
+			<legend id="{id}" class="{classes}" data-content="{label}">
+				<f:render section="labelContent" arguments="{_all}"/>
+			</legend>
+		</f:case>
+		<f:case value="div">
+
+			<f:if condition="{fieldId}">
+				<f:then>
+					<div id="{id}" class="{classes}" data-content="{label}">
+						<f:render section="labelContent" arguments="{_all}"/>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="{classes}" data-content="{label}">
+						<f:render section="labelContent" arguments="{_all}"/>
+					</div>
+				</f:else>
+			</f:if>
+
+
+		</f:case>
+		<f:defaultCase>
+			<label for="powermail_field_{fieldId}" class="{classes}" data-content="{label}">
+				<f:render section="labelContent" arguments="{_all}"/>
+			</label>
+		</f:defaultCase>
+	</f:switch>
+</f:if>
+
+<f:section name="labelContent">
+	<vh:string.escapeLabels>{label}</vh:string.escapeLabels><f:if condition="{required}"><span class="mandatory" aria-hidden="true">*</span>
+		<f:if condition="{screenReaderInformation}">
+			<f:comment><!-- The leading dot finishes the existing label, so it's going be read more natural. --></f:comment>
+			<span class="sr-only">. {screenReaderInformation}</span>
+		</f:if>
+	</f:if>
+</f:section>

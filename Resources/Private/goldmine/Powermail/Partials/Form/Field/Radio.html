@@ -1,0 +1,51 @@
+<f:comment>
+	<!-- LEGEND -->
+</f:comment>
+<f:render partial="Form/FieldLabel" arguments="{label:fieldConfiguration.label,hideLabel:fieldConfiguration.hideLabel,required:fieldConfiguration.required,tagToUse:'legend',fieldId:fieldConfiguration.id}" />
+
+<f:for each="{fieldConfiguration.settings.options}" as="option" iteration="iteration">
+
+	<f:if condition="{fieldConfiguration.origin}">
+		<f:then>
+			<f:variable name="checked" value="{vh:Misc.PrefillMultiField(field:fieldConfiguration.origin, mail:mail, cycle:iteration.cycle)}" />
+			<f:variable name="additionalAttributes" value="{vh:Validation.ValidationDataAttribute(field:fieldConfiguration.origin, iteration:iteration)}" />
+
+			<f:if condition="{iteration.cycle} == 1">
+				<f:comment><!-- Override powermail generated class handler to match needed html structure --></f:comment>
+				<f:variable name="additionalAttributes" value="{t:array(array:additionalAttributes,key:'data-powermail-class-handler',value:'.powermail_fieldwrap_{fieldConfiguration.id} > fieldset > div')}" />
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:variable name="checked" value="{option.selected}" />
+			<f:variable name="additionalAttributes" value="{t:form.validationDataAttribute(configuration:fieldConfiguration, cycle:iteration.cycle)}" />
+		</f:else>
+	</f:if>
+
+	<f:comment>
+		<!-- attributeOverrides are set, e.g. by the custom select field, which uses this partial to render radios for its "single select" mode -->
+	</f:comment>
+	<f:if condition="{attributeOverrides}">
+		<f:variable name="additionalAttributes" value="{t:array(array:additionalAttributes,value:attributeOverrides,treatment:'merge')}" />
+	</f:if>
+
+	<f:comment>
+		<!-- remove aria-required if required is already set -->
+	</f:comment>
+	<f:if condition="{additionalAttributes.required}">
+		<f:variable name="additionalAttributes" value="{t:array(array:additionalAttributes,key:'aria-required',treatment:'remove')}" />
+	</f:if>
+
+	<div class="radio{f:if(condition:fieldConfiguration.error, then: ' powermail_field_error')}">
+		<f:form.radio
+			property="{fieldConfiguration.id}"
+			value="{option.value}"
+			checked="{checked}"
+			id="powermail_field_{fieldConfiguration.id}_{iteration.cycle}"
+			additionalAttributes="{additionalAttributes}"
+			class="powermail_radio powermail_radio_{fieldConfiguration.id}" />
+
+		<label for="powermail_field_{fieldConfiguration.id}_{iteration.cycle}">
+			<f:format.raw><span class="option-element" aria-hidden="true"></span><span class="option-text">{option.label}</span></f:format.raw>
+		</label>
+	</div>
+</f:for>

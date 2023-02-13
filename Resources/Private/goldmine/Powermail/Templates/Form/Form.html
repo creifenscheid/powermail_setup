@@ -1,0 +1,97 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:t="http://typo3.org/ns/Fnn/Template/ViewHelpers"
+	  xmlns:vh="http://typo3.org/ns/In2code/Powermail/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+Render Powermail Form
+{form} 			All Forms with their Pages and their Fields
+{ttContentData}		All values from content element with plugin
+
+<f:section name="main">
+	<f:if condition="{settings.main.moresteps}">
+		<t:includeFile path="EXT:powermail/Resources/Public/JavaScript/Powermail/Tabs.min.js" />
+	</f:if>
+
+	<t:includeFile path="EXT:powermail/Resources/Public/JavaScript/Powermail/Form.min.js" />
+
+	<f:alias map="{flashMessageClass:'powermail_message_error'}">
+		<f:render partial="Misc/FlashMessages" arguments="{_all}" />
+	</f:alias>
+
+	<f:if condition="{form}">
+		<f:then>
+			<f:form
+				action="{action}"
+				section="c{ttContentData.uid}"
+				name="field"
+				id="powermail_form_{form.uid}_{ttContentData.uid}"
+				enctype="multipart/form-data"
+				additionalAttributes="{vh:validation.enableJavascriptValidationAndAjax(form:form)}"
+				addQueryString="{settings.misc.addQueryString}"
+				class="powermail_form powermail_form_{form.uid} {form.css} {settings.styles.framework.formClasses} {vh:Misc.MorestepClass(activate:settings.main.moresteps)}">
+
+				<f:if condition="{form.css} != 'nolabel'">
+					<h3>{form.title}</h3>
+				</f:if>
+
+				<f:comment>
+					<!--
+						 ERROR LISTING
+						 Render a list of all validation errors at the beginning
+					-->
+				</f:comment>
+				<f:render partial="Misc/FormError" arguments="{form:form}" />
+
+				<f:comment>
+					<!--
+						 FORM INSTRUCTIONS
+						 Render instruction on how to use the form before rendering the form.
+					-->
+				</f:comment>
+				<div class="powermail_form__instructions">
+					<p aria-hidden="true"><f:translate key="LLL:EXT:template/Resources/Private/Language/Powermail/de.locallang.xlf:form.requirement.hint"/></p>
+				</div>
+
+				<f:comment>
+					<!--
+						 FORM PAGES NAVIGATION
+					-->
+				</f:comment>
+				<f:if condition="{settings.main.moresteps}">
+					<f:variable name="formNavigationLabel" value="{f:translate(key:'LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.navigation.label')}"/>
+					<nav class="powermail_form__navigation" aria-label="{formNavigationLabel}">
+						<h4 class="sr-only">{formNavigationLabel}</h4>
+
+						<ul class="powermail_form__navigation__list js-powermail-form-navigation">
+							<f:for each="{form.pages}" as="page" iteration="iterationPages">
+								<li class="powermail_form__navigation__list-item">
+									<button class="powermail_form__button{f:if(condition:iterationPages.isFirst,then:' active')} js-powermail-form-navigation-button" type="button"{f:if(condition:iterationPages.isFirst,then:' aria-current="step" ')}data-powermail-morestep-current="{iterationPages.index}" data-powermail-morestep-show="{iterationPages.index}">{page.title}</button>
+								</li>
+							</f:for>
+						</ul>
+
+					</nav>
+				</f:if>
+
+				<f:comment>
+					<!--
+						 FORM PAGES
+					-->
+				</f:comment>
+				<f:for each="{form.pages}" as="page" iteration="iterationPages">
+					<f:render partial="Form/Page" arguments="{_all}" />
+				</f:for>
+
+				<f:form.hidden name="mail[form]" value="{form.uid}" class="powermail_form_uid" />
+				<f:render partial="Misc/HoneyPod" arguments="{form:form}" />
+			</f:form>
+		</f:then>
+		<f:else>
+			<f:translate key="error_no_form" />
+		</f:else>
+	</f:if>
+
+</f:section>
+
+</html>

@@ -1,0 +1,11 @@
+<f:if condition="{vh:validation.isHonepodEnabled()}">
+	<div class="powermail_form__hp">
+		<label for="powermail_hp_{form.uid}">
+			<f:translate key="honeypodLabel" />
+		</label>
+		<f:form.textfield
+			name="field[__hp]"
+			value=""
+			id="powermail_hp_{form.uid}" />
+	</div>
+</f:if>

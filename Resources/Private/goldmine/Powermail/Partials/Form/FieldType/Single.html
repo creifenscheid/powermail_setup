@@ -1,0 +1,26 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="{v:format.trim(content:'cell powermail_fieldwrap powermail_fieldwrap_type_{fieldConfiguration.type} powermail_fieldwrap_{fieldConfiguration.id} {fieldConfiguration.css}')}">
+	<div class="powermail_field">
+
+		<f:comment>
+			<!-- LABEL -->
+		</f:comment>
+		<f:render partial="Form/FieldLabel" arguments="{fieldId:fieldConfiguration.id,label:fieldConfiguration.label,hideLabel:fieldConfiguration.hideLabel,required:fieldConfiguration.required}" />
+
+		<f:comment>
+			<!-- FIELD -->
+		</f:comment>
+		<f:render partial="Form/Field/{vh:String.Upper(string:fieldConfiguration.type)}" arguments="{fieldConfiguration:fieldConfiguration}" />
+
+		<f:comment>
+			<!-- ERROR -->
+		</f:comment>
+		<f:if condition="{fieldConfiguration.error}"><f:format.raw>{fieldConfiguration.error}</f:format.raw></f:if>
+
+		<f:comment>
+			<!-- DESCRIPTION -->
+		</f:comment>
+		<f:render partial="Form/FieldDescription" arguments="{fieldId:fieldConfiguration.id,description:fieldConfiguration.description}" />
+	</div>
+</div>

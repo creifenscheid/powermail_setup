@@ -1,0 +1,19 @@
+<f:comment>
+	<!-- RENDER TYPE -->
+</f:comment>
+<f:variable name="renderType" value="text" />
+<f:for each="{0:'email', 1:'url', 2:'tel', 3:'number', 4:'range'}" as="allowedType">
+	<f:if condition="{fieldConfiguration.validation.type} == {allowedType}">
+		<f:variable name="renderType" value="{allowedType}" />
+	</f:if>
+</f:for>
+
+<f:form.textfield
+	type="{renderType}"
+	property="{fieldConfiguration.id}"
+	placeholder="{fieldConfiguration.placeholder}"
+	value="{fieldConfiguration.value}"
+	class="powermail_element powermail_input{f:if(condition:fieldConfiguration.error, then: ' powermail_field_error')}{f:if(condition:'{fieldConfiguration.placeholder}',then:' placeholder-shown')}"
+	additionalAttributes="{fieldConfiguration.attributes}"
+	id="powermail_field_{fieldConfiguration.id}"
+/>

@@ -1,0 +1,50 @@
+<f:comment>
+	<!-- LEGEND -->
+</f:comment>
+<f:variable name="screenReaderInformation" value="{f:translate(key: 'LLL:EXT:template/Resources/Private/Language/Powermail/de.locallang.xlf:form.elementsGroup.mandatory')}" />
+<f:render partial="Form/FieldLabel" arguments="{label:fieldConfiguration.label,hideLabel:fieldConfiguration.hideLabel,required:fieldConfiguration.required,tagToUse:'legend',fieldId:fieldConfiguration.id,screenReaderInformation:screenReaderInformation}" />
+
+<f:for each="{fieldConfiguration.settings.options}" as="option" iteration="iteration">
+
+	<f:comment><!-- Clear variable to prevent inheritance --></f:comment>
+	<f:variable name="additionalAttributes" value="" />
+
+	<f:if condition="{fieldConfiguration.origin}">
+		<f:then>
+			<f:variable name="checked" value="{vh:Misc.PrefillMultiField(field:fieldConfiguration.origin, mail:mail, cycle:iteration.cycle)}" />
+			<f:variable name="additionalAttributes" value="{vh:Validation.ValidationDataAttribute(field:fieldConfiguration.origin, iteration:iteration)}" />
+
+			<f:if condition="{iteration.cycle} == 1">
+				<f:comment><!-- Override powermail generated class handler to match needed html structure --></f:comment>
+				<f:variable name="additionalAttributes" value="{t:array(array:additionalAttributes,key:'data-powermail-class-handler',value:'.powermail_fieldwrap_{fieldConfiguration.id} > fieldset > div')}" />
+
+				<f:comment>
+					<!--
+						Remove attribute "aria-required"
+						This shall reduce confusion as the first box is NOT required.
+						Required is only one of the checkboxes, but it could be understood that the first box is required.
+					-->
+				</f:comment>
+				<f:variable name="additionalAttributes" value="{t:array(array:additionalAttributes,key:'aria-required',treatment:'remove')}" />
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:variable name="checked" value="{option.selected}" />
+			<f:variable name="additionalAttributes" value="{t:form.validationDataAttribute(configuration:fieldConfiguration, cycle:iteration.cycle)}" />
+		</f:else>
+	</f:if>
+
+	<div class="checkbox{f:if(condition:fieldConfiguration.error, then: ' powermail_field_error')}">
+		<f:form.checkbox
+			property="{fieldConfiguration.id}."
+			value="{option.value}"
+			checked="{checked}"
+			id="powermail_field_{fieldConfiguration.id}_{iteration.cycle}"
+			additionalAttributes="{additionalAttributes}"
+			class="powermail_checkbox powermail_checkbox_{fieldConfiguration.id}" />
+
+		<label for="powermail_field_{fieldConfiguration.id}_{iteration.cycle}">
+			<f:format.raw><span class="option-element" aria-hidden="true"></span><span class="option-text">{option.label}</span></f:format.raw>
+		</label>
+	</div>
+</f:for>

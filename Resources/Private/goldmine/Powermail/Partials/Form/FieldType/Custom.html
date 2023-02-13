@@ -1,0 +1,18 @@
+<f:comment>
+	<!--
+		This partial is only for transit of custom elements, where nothing can be reused or nothing is really shared.
+	-->
+</f:comment>
+
+<f:if condition="{fieldConfiguration.id}">
+	<f:then>
+		<f:variable name="fieldId" value=" powermail_fieldwrap_{fieldConfiguration.id}" />
+	</f:then>
+	<f:else>
+		<f:variable name="fieldId" value="" />
+	</f:else>
+</f:if>
+
+<div class="{v:format.trim(content:'cell powermail_fieldwrap powermail_fieldwrap_type_{fieldConfiguration.type}{fieldId} {fieldConfiguration.css}')}">
+	<f:render partial="Form/Field/{vh:String.Upper(string:fieldConfiguration.type)}" arguments="{fieldConfiguration:fieldConfiguration}" />
+</div>
