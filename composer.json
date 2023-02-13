@@ -1,17 +1,13 @@
 {
-	"name" : "creifenscheid/xxx",
+	"name" : "creifenscheid/powermail-setup",
 	"type" : "typo3-cms-extension",
-	"description" : "xxx",
+	"description" : "Extension to configure and set up EXT:powermail",
 	"license" : "GPL-2.0-or-later",
 	"require" : {
-		"typo3/cms-core" : "^10.4"
+		"typo3/cms-core" : "^11.5",
+		"in2code/powermail" : "^10"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"CReifenscheid\\xxx\\" : "Classes/"
-		}
-	},
-	"minimum-stability" : "dev",
+	"minimum-stability" : "alpha",
 	"authors" : [{
 			"name" : "C. Reifenscheid",
 			"email" : "dev@christian-reifenscheid.de"
