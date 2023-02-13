@@ -38,5 +38,10 @@ $EM_CONF[$_EXTKEY] = [
             'powermail' => '10.0.0-10.9.99',
             'site_setup' => '11.0.0-11.9.99'
         ]
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'CReifenscheid\\PowermailSetup\\' => 'Classes'
+        ]
     ]
 ];

@@ -4,7 +4,7 @@ defined('TYPO3_MODE') or die();
 
 $extensionKey = 'powermail_setup';
 $table = 'tx_powermail_domain_model_field';
-$l10n = 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_' . $table . '.xlf:';
+$l10n = 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_' . $table . '.xlf:';
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
     'tx_powermail_domain_model_field',
