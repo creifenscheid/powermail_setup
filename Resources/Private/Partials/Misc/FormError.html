@@ -5,40 +5,29 @@
 		FORM ERROR RENDERING
 
 		This partial renders a list of errors in an eye-catching box with an attention icon.
-
-		# Use case 1: Powermail
-		Hand over the current form object (form)
-		Example: <f:render partial="Misc/FormError" arguments="{form:form}" />
-
-		# Use case 2: Custom
-		Just call the partial without any arguments
-		Example: <f:render partial="Misc/FormError" />
-
-		Variables:
-		- form | optional | EXT:powermail form object
-
-		@599Todo - Test with custom form
 	-->
 </f:comment>
+
+
 
 <f:form.validationResults>
 	<f:if condition="{validationResults.flattenedErrors}">
 		<div class="powermail_form_errors">
-			<h4 class="powermail_form_errors__header"><span class="icon icon-attention" aria-hidden="true"></span><span class="wording"><f:translate key="LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.errors.list.headline"/></span></h4>
+			<h4 class="powermail_form_errors__header"><span class="icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
 
 			<f:variable name="errorCount" value="{f:count(subject:validationResults.flattenedErrors)}"/>
 
 			<f:if condition="{errorCount} > 1">
 				<f:then>
-					<f:variable name="errorsDescription"><f:translate key="LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.errors.list.description" arguments="{0:errorCount}"/></f:variable>
+					<f:variable name="errorsDescription"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.description" arguments="{0:errorCount}"/></f:variable>
 				</f:then>
 				<f:else>
-					<f:variable name="errorsDescription"><f:translate key="LLL:EXT:template/Resources/Private/Language/Powermail/locallang.xlf:form.errors.list.description.single" /></f:variable>
+					<f:variable name="errorsDescription"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.description.single" /></f:variable>
 				</f:else>
 			</f:if>
 			<p class="powermail_form_errors__description">{errorsDescription}</p>
 
-			<ul class="powermail_form_errors__list content">
+			<ul class="powermail_form_errors__list">
 				<f:for each="{validationResults.flattenedErrors}" as="errors">
 					<f:for each="{errors}" as="singleError">
 						<f:if condition="{singleError.message} == 'spam_details'">
