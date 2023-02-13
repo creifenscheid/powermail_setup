@@ -35,7 +35,8 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
-            'powermail' => '10.0.0-10.9.99'
+            'powermail' => '10.0.0-10.9.99',
+            'site_setup' => '11.0.0-11.9.99'
         ]
     ]
 ];
