@@ -1,0 +1,39 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<f:comment>
+	<!-- LABEL -->
+</f:comment>
+<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+
+<div class="{settings.styles.framework.fieldWrappingClasses}">
+	<f:comment>
+		<!-- FIELD -->
+	</f:comment>
+	<f:if condition="{additionalAttributes}">
+		<f:then>
+			<f:variable name="additionalAttributes" value="{vh:validation.validationDataAttribute(field:field, additionalAttributes:additionalAttributes)}" />
+		</f:then>
+		<f:else>
+			<f:variable name="additionalAttributes" value="{vh:validation.validationDataAttribute(field:field)}" />
+		</f:else>
+	</f:if>
+	<f:form.textarea
+		cols="20"
+		rows="5"
+		id="powermail_field_{field.marker}"
+		property="{field.marker}"
+		placeholder="{field.placeholder}"
+				value="{vh:misc.prefillField(field:field, mail:mail)}"
+				additionalAttributes="{additionalAttributes}"
+		class="powermail_textarea {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}" />
+	<f:comment>
+		<!-- ERROR -->
+	</f:comment>
+	<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
+	
+	<f:comment>
+		<!-- DESCRIPTION -->
+	</f:comment>
+	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
+</div>
