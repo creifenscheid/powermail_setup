@@ -13,9 +13,9 @@
 		<f:for each="{validationResults.flattenedErrors}" as="errors">
 			<f:for each="{errors}" as="singleError">
 				<f:if condition="{singleError.arguments.marker} == {field.marker}">
-					<div class="powermail_field_error" id="powermail_error_{field.marker}">
-						<span class="powermail_field_error__icon" aria-hidden="true"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span>
-						<span class="powermail_field_error__message"><f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></span>
+					<div class="powermail__field-error" id="powermail_error_{field.marker}">
+						<span class="powermail__field-error__icon" aria-hidden="true"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span>
+						<span class="powermail__field_error__message"><f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></span>
 					</div>
 				</f:if>
 			</f:for>

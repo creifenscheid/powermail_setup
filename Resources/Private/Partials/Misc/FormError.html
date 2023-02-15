@@ -12,8 +12,8 @@
 
 <f:form.validationResults>
 	<f:if condition="{validationResults.flattenedErrors}">
-		<div class="powermail_form_errors">
-			<h4 class="powermail_form_errors__header"><span class="powermail_form_errors__icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="powermail_form_errors__wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
+		<div class="powermail__form-errors">
+			<h4 class="powermail__form-errors__header"><span class="powermail__form-errors__icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="powermail__form-errors__wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
 
 			<f:variable name="errorCount" value="{f:count(subject:validationResults.flattenedErrors)}"/>
 
@@ -25,9 +25,9 @@
 					<f:variable name="errorsDescription"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.description.single" /></f:variable>
 				</f:else>
 			</f:if>
-			<p class="powermail_form_errors__description">{errorsDescription}</p>
+			<p class="powermail__form-errors__description">{errorsDescription}</p>
 
-			<ul class="powermail_form_errors__list">
+			<ul class="powermail__form-errors__list">
 				<f:for each="{validationResults.flattenedErrors}" as="errors">
 					<f:for each="{errors}" as="singleError">
 						<f:if condition="{singleError.message} == 'spam_details'">
@@ -49,7 +49,7 @@
 						</f:if>
 						<f:variable name="message">{message} <f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></f:variable>
 
-						<li class="powermail_form_errors__list-item">{message}</li>
+						<li class="powermail__form-errors__list-item">{message}</li>
 					</f:for>
 				</f:for>
 			</ul>
