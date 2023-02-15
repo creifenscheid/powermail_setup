@@ -1,18 +1,38 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
 
-<div class="powermail_fieldwrap powermail_fieldwrap_type_input powermail_fieldwrap_{field.marker}{f:if(condition:field.css, then:' {field.css}')}{f:if(condition:settings.styles.framework.fieldAndLabelWrappingClasses,then:' {settings.styles.framework.fieldAndLabelWrappingClasses}')}">
+<f:comment>
+	<!-- LABEL -->
+</f:comment>
+<f:render partial="Form/FieldLabel" arguments="{_all}" />
 
-	<!-- go on -->
-	<f:render partial="Form/FieldLabel" arguments="{_all}" />
-
-	<div class="{settings.styles.framework.fieldWrappingClasses}">
-		<f:form.textfield
-				type="{vh:validation.fieldTypeFromValidation(field:field)}"
-				property="{field.marker}"
-				placeholder="{field.placeholder}"
-				value="{vh:misc.prefillField(field:field, mail:mail)}"
-				class="powermail_input {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}"
-				additionalAttributes="{vh:validation.validationDataAttribute(field:field)}"
-				id="powermail_field_{field.marker}" />
-	</div>
+<div class="{settings.styles.framework.fieldWrappingClasses}">
+	
+	<f:comment>
+		<!-- FIELD -->
+	</f:comment>
+	<f:if condition="{additionalAttributes}">
+		<f:then>
+			<f:variable name="additionalAttributes" value="{vh:validation.validationDataAttribute(field:field, additionalAttributes:additionalAttributes)}" />
+		</f:then>
+		<f:else>
+			<f:variable name="additionalAttributes" value="{vh:validation.validationDataAttribute(field:field)}" />
+		</f:else>
+	</f:if>
+	<f:form.textfield type="{vh:validation.fieldTypeFromValidation(field:field)}"
+		property="{field.marker}"
+		placeholder="{field.placeholder}"
+		value="{vh:misc.prefillField(field:field, mail:mail)}"
+		class="powermail_input {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}"
+		additionalAttributes="{additionalAttributes}"
+		id="powermail_field_{field.marker}" />
+	
+	<f:comment>
+		<!-- ERROR -->
+	</f:comment>
+	<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
+	
+	<f:comment>
+		<!-- DESCRIPTION -->
+	</f:comment>
+	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
 </div>

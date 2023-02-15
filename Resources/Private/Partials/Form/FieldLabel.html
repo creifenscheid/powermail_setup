@@ -1,35 +1,36 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
-<f:if condition="{label}">
+<f:if condition="{field.title}">
 
-	<f:variable name="classes" value="powermail_label{f:if(condition:hideLabel, then: ' sr-only')}" />
-	<f:variable name="id" value="powermail_label_{fieldId}" />
-	<f:variable name="for" value="powermail_label_{fieldId}" />
-
-	<f:switch expression="{tagToUse}">
-		<f:case value="legend">
-			<legend id="{id}" class="{classes}" data-content="{label}">
-				<f:render section="labelContent" arguments="{_all}"/>
-			</legend>
-		</f:case>
-		<f:case value="div">
-
-			<f:if condition="{fieldId}">
+	<f:variable name="classes" value="powermail_label{f:if(condition:field.hideLabel, then: ' sr-only')}" />
+	<f:variable name="id" value="powermail_label_{field.marker}" />
+	
+	<f:switch expression="{field.type}">
+		<f:case value="text">
+			<f:if condition="{field.marker}">
 				<f:then>
 					<div id="{id}" class="{classes}" data-content="{label}">
 						<f:render section="labelContent" arguments="{_all}"/>
 					</div>
 				</f:then>
 				<f:else>
-					<div class="{classes}" data-content="{label}">
+					<div class="{classes}" data-content="{field.title}">
 						<f:render section="labelContent" arguments="{_all}"/>
 					</div>
 				</f:else>
 			</f:if>
-
-
+		</f:case>
+		<f:case value="radio">
+			<legend id="{id}" class="{classes}" data-content="{label}">
+				<f:render section="labelContent" arguments="{_all}"/>
+			</legend>
+		</f:case>
+		<f:case value="check">
+			<legend id="{id}" class="{classes}" data-content="{label}">
+				<f:render section="labelContent" arguments="{_all}"/>
+			</legend>
 		</f:case>
 		<f:defaultCase>
-			<label for="powermail_field_{fieldId}" class="{classes}" data-content="{label}">
+			<label for="powermail_field_{field.marker}" class="{classes}" data-content="{field.title}">
 				<f:render section="labelContent" arguments="{_all}"/>
 			</label>
 		</f:defaultCase>
@@ -37,7 +38,9 @@
 </f:if>
 
 <f:section name="labelContent">
-	<vh:string.escapeLabels>{label}</vh:string.escapeLabels><f:if condition="{required}"><span class="mandatory" aria-hidden="true">*</span>
+	<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><f:if condition="{field.required}"><span class="mandatory" aria-hidden="true">*</span>
+	
+	@SeppToDo: check whats been rendered in t3default
 		<f:if condition="{screenReaderInformation}">
 			<f:comment><!-- The leading dot finishes the existing label, so it's going be read more natural. --></f:comment>
 			<span class="sr-only">. {screenReaderInformation}</span>

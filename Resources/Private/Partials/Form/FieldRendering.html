@@ -1,0 +1,31 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<f:comment>
+<!--
+	FIELD ERROR - generates rendered error message
+-->
+</f:comment>
+<f:variable name="fieldError"><f:spaceless><f:render partial="Misc/FieldError" arguments="{field:field}" /></f:spaceless></f:variable>
+
+<f:if condition="{field.description} && {fieldError}">
+<f:then>
+	<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_error_{field.marker} powermail_description_{field.marker}'}" />
+</f:then>
+<f:else>
+	<f:if condition="{fieldError}">
+		<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_error_{field.marker}'}" />
+	</f:if>
+	
+	<f:if condition="{field.description}">
+		<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_description_{field.marker}'}" />
+	</f:if>
+</f:else>
+</f:if>
+
+<vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
+
+	<div class="powermail_fieldwrap powermail_fieldwrap_type_{field.type} powermail_fieldwrap_{field.marker}{f:if(condition:field.css, then:' {field.css}')}{f:if(condition:settings.styles.framework.fieldAndLabelWrappingClasses,then:' {settings.styles.framework.fieldAndLabelWrappingClasses}')}">
+		<f:render partial="Form/Field/{vh:String.Upper(string:field.type)}" arguments="{field:field, fieldError:fieldError,additionalAttributes:additionalAttributes}"/>
+	</div>	
+	
+</vh:misc.createRowTags>	
