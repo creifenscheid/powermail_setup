@@ -24,7 +24,7 @@
 
 <vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
 
-	<div class="powermail_fieldwrap powermail_fieldwrap_type_{field.type} powermail_fieldwrap_{field.marker}{f:if(condition:field.css, then:' {field.css}')}{f:if(condition:settings.styles.framework.fieldAndLabelWrappingClasses,then:' {settings.styles.framework.fieldAndLabelWrappingClasses}')}">
+	<div class="powermail__fieldwrap powermail__fieldwrap_type_{field.type} powermail__fieldwrap_{field.marker}{f:if(condition:field.css, then:' {field.css}')}{f:if(condition:settings.styles.framework.fieldAndLabelWrappingClasses,then:' {settings.styles.framework.fieldAndLabelWrappingClasses}')}">
 		<f:render partial="Form/Field/{vh:String.Upper(string:field.type)}" arguments="{field:field, fieldError:fieldError,additionalAttributes:additionalAttributes}"/>
 	</div>	
 	

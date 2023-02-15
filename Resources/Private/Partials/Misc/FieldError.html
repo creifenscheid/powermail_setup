@@ -15,7 +15,7 @@
 				<f:if condition="{singleError.arguments.marker} == {field.marker}">
 					<div class="powermail__field-error" id="powermail_error_{field.marker}">
 						<span class="powermail__field-error__icon" aria-hidden="true"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span>
-						<span class="powermail__field_error__message"><f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></span>
+						<span class="powermail__field-error__message"><f:translate key="validationerror_{singleError.message}">{singleError.message}</f:translate></span>
 					</div>
 				</f:if>
 			</f:for>

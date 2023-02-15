@@ -1,7 +1,7 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
 <f:if condition="{field.title}">
 
-	<f:variable name="classes" value="powermail_label{f:if(condition:field.hideLabel, then: ' sr-only')}" />
+	<f:variable name="classes" value="powermail__label{f:if(condition:field.hideLabel, then: ' sr-only')}" />
 	<f:variable name="id" value="powermail_label_{field.marker}" />
 	
 	<f:switch expression="{field.type}">
