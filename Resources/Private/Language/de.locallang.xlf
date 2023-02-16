@@ -40,6 +40,10 @@
                 <source>Previous step: %s</source>
                 <target>Vorheriger Schritt: %s</target>
             </trans-unit>
+            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
+                <source>One of the following options must be selected.</source>
+                <target>Eine der folgenden Optionen muss ausgewählt werden.</target>
+            </trans-unit>
 
             <!-- UNUSED -->
 
@@ -58,10 +62,6 @@
                 <target>Der Konfigurationsparameter "%s" fehlt, ist aber erforderlich. Bitte passen Sie Ihre
                     Feldkonfiguration an.
                 </target>
-            </trans-unit>
-            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
-                <source>One of the following options must be selected.</source>
-                <target>Eine der folgenden Optionen muss ausgewählt werden.</target>
             </trans-unit>
         </body>
     </file>

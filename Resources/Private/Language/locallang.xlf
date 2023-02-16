@@ -29,6 +29,9 @@
             <trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
                 <source>Previous step: %s</source>
             </trans-unit>
+            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
+                <source>One of the following options must be selected.</source>
+            </trans-unit>
 
             <!-- UNUSED -->
 
@@ -42,9 +45,6 @@
                         resname="form.errors.rendering.message.requiredAttribute">
                 <source>Configuration parameter "%s" is missing but required. Please adjust your field configuration.
                 </source>
-            </trans-unit>
-            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
-                <source>One of the following options must be selected.</source>
             </trans-unit>
         </body>
     </file>
