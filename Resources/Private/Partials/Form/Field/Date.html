@@ -1,0 +1,37 @@
+<f:comment>
+	<!-- LABEL -->
+</f:comment>
+<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+<div class="{settings.styles.framework.fieldWrappingClasses}">
+
+	<f:comment>
+		<!-- FIELD -->
+	</f:comment>
+	<f:if condition="{additionalAttributes}">
+		<f:then>
+			<f:variable name="additionalAttributes" value="{vh:validation.datepickerDataAttribute(field:field, value:'{vh:misc.prefillField(field:field)}', additionalAttributes:additionalAttributes)}" />
+		</f:then>
+		<f:else>
+			<f:variable name="additionalAttributes" value="{vh:validation.datepickerDataAttribute(field:field, value:'{vh:misc.prefillField(field:field)}')}" />
+		</f:else>
+	</f:if>
+	<f:form.textfield
+			type="{field.datepickerSettingsOptimized}"
+			id="powermail_field_{field.marker}"
+		property="{field.marker}"
+			value="{vh:misc.prefillField(field:field, mail:mail)}"
+			additionalAttributes="{additionalAttributes}"
+		class="powermail__field powermail__field--date {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail__field-error')}" />
+		
+	<f:comment>
+		<!-- ERROR -->
+	</f:comment>
+	<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
+	
+	<f:comment>
+		<!-- DESCRIPTION -->
+	</f:comment>
+	<f:render partial="Form/FieldDescription" arguments="{field:field}" />	
+</div>
+	
