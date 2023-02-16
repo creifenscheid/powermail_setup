@@ -41,7 +41,7 @@
 	<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><f:if condition="{field.required}"><span class="mandatory" aria-hidden="true">*</span>
 	
 	@SeppToDo: check whats been rendered in t3default
-		<f:if condition="{field.type} == 'check'">
+		<f:if condition="{field.type} == 'check' || {field.type} == 'radio'">
 			<f:comment><!-- The leading dot finishes the existing label, so it's going be read more natural. --></f:comment>
 			<span class="sr-only">. <f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.elementsGroup.mandatory" /></span>
 		</f:if>
