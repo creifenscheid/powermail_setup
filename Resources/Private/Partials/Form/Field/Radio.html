@@ -1,0 +1,60 @@
+<fieldset class="{settings.styles.framework.fieldWrappingClasses}" {f:if(condition:field.description, then:'aria-describedby="powermail_description_{field.marker}"')}>
+
+	<f:comment>
+		<!-- LEGEND -->
+	</f:comment>
+	<f:render partial="Form/FieldLabel" arguments="{field:field}" />
+
+	<f:comment>
+		<!-- ELEMENTS -->
+	</f:comment>
+	<f:for each="{field.modifiedSettings}" as="setting" iteration="iteration">
+	
+		<f:variable name="checked" value="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:iteration.cycle)}" />
+		<f:variable name="additionalAttributes" value="{vh:Validation.ValidationDataAttribute(field:field, iteration:iteration)}" />
+
+		<f:if condition="{iteration.cycle} == 1">
+			<f:comment><!-- Override powermail generated class handler to match needed html structure --></f:comment>
+			
+			@SeppToDo: prüfen ob das korrekt eingefügt wird
+			<f:variable name="additionalAttributes.data-powermail-class-handler" value=".powermail__fieldwrap_{field.marker} > fieldset > div" />
+		</f:if>
+		
+		
+		xxx
+		
+	</f:for>
+	
+	<f:comment>
+		<!-- ERRORS -->
+	</f:comment>
+	<f:if condition="{settings.validation.client}">
+		<f:then>
+			<div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
+		</f:then>
+		<f:else>
+			<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
+		</f:else>
+	</f:if>
+
+	<f:comment>
+		<!-- DESCRIPTION -->
+	</f:comment>
+	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
+</fieldset>
+
+
+#############
+
+		<div class="{settings.styles.framework.radioClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}">
+			<label>
+				<f:form.radio
+							property="{field.marker}"
+							value="{setting.value}"
+							checked="{vh:misc.prefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
+							id="powermail_field_{field.marker}_{index.cycle}"
+							additionalAttributes="{vh:validation.validationDataAttribute(field:field, iteration:index)}"
+							class="powermail_radio" />
+					<vh:string.escapeLabels>{setting.label}</vh:string.escapeLabels>
+				</label>
+			</div>
