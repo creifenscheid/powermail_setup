@@ -16,7 +16,7 @@
 		}
 	},
 	"replace": {
-		"typo3-ter/ctype-manager": "self.version"
+		"typo3-ter/powermail-setup": "self.version"
 	},
 	"minimum-stability" : "alpha",
 	"authors" : [{
