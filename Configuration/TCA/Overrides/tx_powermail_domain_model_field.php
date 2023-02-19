@@ -14,7 +14,7 @@ $l10n = 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_' . 
             'label' => $l10n . 'hide_label',
             'config' => [
                 'type' => 'check',
-                'default' => 0
+                'default' => false
             ]
         ],
         'autocomplete' => [

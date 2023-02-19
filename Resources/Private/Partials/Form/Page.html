@@ -20,17 +20,17 @@
 			 - Styling (spacing between buttons)
 			 - JS move focus, e.g. pressing "next" on the first page -> focus heads to "next" on the second page (if existing, otherwise previous button)
 		-->
+	</f:comment>
 	<f:if condition="{settings.main.moresteps}">
 		<div class="powermail__fieldwrap powermail__tab-navigation">
 			<f:if condition="!{iterationPages.isFirst}">
-				<f:variable name="previousPage"><v:variable.get name="form.pages.{iterationPages.index - 1}" /></f:variable>
+				<f:variable name="previousPage">{form.pages.{iterationPages.index - 1}}</f:variable>
 				<button type="button" class="powermail__button active" data-powermail-morestep-show="{iterationPages.index - 1}" aria-label="{f:translate(key: 'LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.steps.prev.label', arguments:{0:previousPage.title})}">&lt;</button>
 			</f:if>
 			<f:if condition="!{iterationPages.isLast}">
-				<f:variable name="nextPage"><v:variable.get name="form.pages.{iterationPages.cycle}" /></f:variable>
+				<f:variable name="nextPage">{form.pages.{iterationPages.cycle}}</f:variable>
 				<button type="button" class="powermail__button active" data-powermail-morestep-show="{iterationPages.cycle}" aria-label="{f:translate(key: 'LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.steps.next.label', arguments:{0:nextPage.title})}">&gt;</button>
 			</f:if>
 		</div>
 	</f:if>
-	</f:comment>
 </fieldset>

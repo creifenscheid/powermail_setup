@@ -36,7 +36,7 @@ class Field extends \In2code\Powermail\Domain\Model\Field
     protected bool $hideLabel = false;
     protected string $autocomplete = '';
 
-    public function getHideLabel(): bool
+    public function isHideLabel(): bool
     {
         return $this->hideLabel;
     }
