@@ -1,0 +1,15 @@
+TCEFORM {
+    tt_content {
+        pi_flexform {
+            powermail_pi1 {
+                main {
+                    settings\.flexform\.main\.moresteps.disabled = 1
+                }
+            }
+        }
+    }
+
+    tx_powermail_domain_model_field {
+
+    }
+}
