@@ -10,6 +10,11 @@ TCEFORM {
     }
 
     tx_powermail_domain_model_field {
-
+        type.removeItems = captcha,content,html,file,hidden,country,location,typoscript
+        placeholder.disabled = 1
+        prefill_value.disabled = 1
+        feuser_value.disabled = 1
+        css.disabled = 1
+        create_from_typoscript.disabled = 1
     }
 }

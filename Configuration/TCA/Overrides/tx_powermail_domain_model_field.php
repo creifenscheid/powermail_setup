@@ -59,5 +59,5 @@ foreach ($autocompleteConfiguration as $group => $items) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette ('tx_powermail_domain_model_field', 'title_settings', 'title,hide_label');
 
 // ADD TO TCA
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', 'autocomplete', '', 'before:description');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', 'autocomplete', 'input,textarea,select', 'before:description');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', '--palette--;;title_settings', '', 'replace:title');
