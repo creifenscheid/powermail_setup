@@ -1,49 +1,37 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
 <f:if condition="{field.title}">
 
-	<f:variable name="classes" value="powermail__label{f:if(condition:field.hideLabel, then: ' sr-only')}" />
+	<f:variable name="classes" value="powermail__label powermail__label--{field.type}{f:if(condition:field.hideLabel, then: ' sr-only')}" />
 	<f:variable name="id" value="powermail_label_{field.marker}" />
 	
 	<f:switch expression="{field.type}">
 		<f:case value="text">
 			<f:if condition="{field.marker}">
 				<f:then>
-					<div id="{id}" class="{classes}" data-content="{label}">
-						<f:render section="labelContent" arguments="{_all}"/>
-					</div>
+					<div id="{id}" class="{classes}" data-content="{label}"><f:render section="labelContent" arguments="{_all}"/></div>
 				</f:then>
 				<f:else>
-					<div class="{classes}" data-content="{field.title}">
-						<f:render section="labelContent" arguments="{_all}"/>
-					</div>
+					<div class="{classes}" data-content="{field.title}"><f:render section="labelContent" arguments="{_all}"/></div>
 				</f:else>
 			</f:if>
 		</f:case>
 		<f:case value="radio">
-			<legend id="{id}" class="{classes}" data-content="{label}">
-				<f:render section="labelContent" arguments="{_all}"/>
-			</legend>
+			<legend id="{id}" class="{classes}" data-content="{label}"><f:render section="labelContent" arguments="{_all}"/></legend>
 		</f:case>
 		<f:case value="check">
-			<legend id="{id}" class="{classes}" data-content="{label}">
-				<f:render section="labelContent" arguments="{_all}"/>
-			</legend>
+			<legend id="{id}" class="{classes}" data-content="{label}"><f:render section="labelContent" arguments="{_all}"/></legend>
 		</f:case>
 		<f:defaultCase>
-			<label for="powermail_field_{field.marker}" class="{classes}" data-content="{field.title}">
-				<f:render section="labelContent" arguments="{_all}"/>
-			</label>
+			<label for="powermail_field_{field.marker}" class="{classes}" data-content="{field.title}"><f:render section="labelContent" arguments="{_all}"/></label>
 		</f:defaultCase>
 	</f:switch>
 </f:if>
 
-<f:section name="labelContent">
-	<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><f:if condition="{field.required}"><span class="mandatory" aria-hidden="true">*</span>
-	
-	@SeppToDo: check whats been rendered in t3default
+<f:section name="labelContent"><f:spaceless>
+	<vh:string.escapeLabels>{field.title}</vh:string.escapeLabels><f:if condition="{field.mandatory}"><span class="mandatory" aria-hidden="true">*</span>
 		<f:if condition="{field.type} == 'check' || {field.type} == 'radio'">
 			<f:comment><!-- The leading dot finishes the existing label, so it's going be read more natural. --></f:comment>
 			<span class="sr-only">. <f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.elementsGroup.mandatory" /></span>
 		</f:if>
 	</f:if>
-</f:section>
+</f:spaceless></f:section>

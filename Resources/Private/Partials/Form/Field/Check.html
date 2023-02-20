@@ -11,14 +11,14 @@
 	<f:variable name="additionalAttributes" value="{data-powermail-errors-container:'.powermail_field_error_container_{field.marker}', data-powermail-class-handler:'.powermail__fieldwrap_{field.marker} > fieldset > div'}" />
 
 	<f:for each="{field.modifiedSettings}" as="setting" iteration="index">
-		<div class="{settings.styles.framework.radioClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}">
-			<f:form.radio
-				property="{field.marker}"
+		<div class="{settings.styles.framework.checkClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}">
+			<f:form.checkbox
+				property="{field.marker}."
 				value="{setting.value}"
-				checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
+				checked="{vh:misc.prefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
 				id="powermail_field_{field.marker}_{index.cycle}"
 				additionalAttributes="{additionalAttributes}"
-				class="powermail__radio powermail__radio_{field.marker}" />
+				class="powermail__checkbox powermail__checkbox_{field.marker}" />
 
 			<label for="powermail_field_{field.marker}_{index.cycle}">
 				<f:format.raw><span class="option-element" aria-hidden="true"></span><span class="option-text">{setting.label}</span></f:format.raw>
