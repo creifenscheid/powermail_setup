@@ -18,18 +18,12 @@ return [
     ],
 
     \CReifenscheid\PowermailSetup\Domain\Model\Field::class => [
-        'mapping' => [
-            'tableName' => 'tx_powermail_domain_model_field'
-        ]
+        'tableName' => 'tx_powermail_domain_model_field'
     ],
     \CReifenscheid\PowermailSetup\Domain\Model\Page::class => [
-        'mapping' => [
-            'tableName' => 'tx_powermail_domain_model_page'
-        ]
+        'tableName' => 'tx_powermail_domain_model_page'
     ],
     \CReifenscheid\PowermailSetup\Domain\Model\Form::class => [
-        'mapping' => [
-            'tableName' => 'tx_powermail_domain_model_form'
-        ]
+        'tableName' => 'tx_powermail_domain_model_form'
     ]
 ];
