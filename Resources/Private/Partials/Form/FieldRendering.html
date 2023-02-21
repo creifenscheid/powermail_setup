@@ -9,17 +9,36 @@
 
 <f:if condition="{field.description} && {fieldError}">
 <f:then>
-	<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_error_{field.marker} powermail_description_{field.marker}'}" />
+	<f:variable name="ariaDescribedBy" value="powermail_error_{field.marker} powermail_description_{field.marker}" />
 </f:then>
 <f:else>
 	<f:if condition="{fieldError}">
-		<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_error_{field.marker}'}" />
+		<f:variable name="ariaDescribedBy" value="powermail_error_{field.marker}" />
 	</f:if>
 	
 	<f:if condition="{field.description}">
-		<f:variable name="additionalAttributes" value="{aria-describedby:'powermail_description_{field.marker}'}" />
+		<f:variable name="ariaDescribedBy" value="powermail_description_{field.marker}" />
 	</f:if>
 </f:else>
+</f:if>
+
+<f:if condition="{field.autocomplete}">
+	<f:variable name="autocomplete" value="{field.autocomplete}" />
+</f:if>
+
+<f:if condition="{ariaDescribedBy} && {autocomplete}">
+	<f:then>
+		<f:variable name="additionalAttributes" value="{aria-describedby:ariaDescribedBy, autocomplete:autocomplete}" />
+	</f:then>
+	<f:else>
+		<f:if condition="{ariaDescribedBy}">
+			<f:variable name="additionalAttributes" value="{aria-describedby:ariaDescribedBy}" />
+		</f:if>
+
+		<f:if condition="{autocomplete}">
+			<f:variable name="additionalAttributes" value="{autocomplete:autocomplete}" />
+		</f:if>
+	</f:else>
 </f:if>
 
 <vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
