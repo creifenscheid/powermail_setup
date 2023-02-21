@@ -18,7 +18,7 @@
 	"replace": {
 		"typo3-ter/powermail-setup": "self.version"
 	},
-	"minimum-stability" : "alpha",
+	"minimum-stability" : "stable",
 	"authors" : [{
 		"name" : "C. Reifenscheid",
 		"email" : "dev@christian-reifenscheid.de"
