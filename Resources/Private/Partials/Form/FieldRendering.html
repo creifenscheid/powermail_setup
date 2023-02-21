@@ -22,10 +22,12 @@
 </f:else>
 </f:if>
 
-<vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
+<f:if condition="{field.type} == 'input'">
+	<f:debug title="Debug">{field}</f:debug>
+</f:if>
 
+<vh:misc.createRowTags columns="{settings.styles.numberOfColumns}" class="{settings.styles.framework.rowClasses}" iteration="{iteration}">
 	<div class="powermail__fieldwrap powermail__fieldwrap_type_{field.type} powermail__fieldwrap_{field.marker}{f:if(condition:field.css, then:' {field.css}')}{f:if(condition:settings.styles.framework.fieldAndLabelWrappingClasses,then:' {settings.styles.framework.fieldAndLabelWrappingClasses}')}">
 		<f:render partial="Form/Field/{vh:String.Upper(string:field.type)}" arguments="{field:field, fieldError:fieldError,additionalAttributes:additionalAttributes}"/>
-	</div>	
-	
-</vh:misc.createRowTags>	
+	</div>
+</vh:misc.createRowTags>
