@@ -6,6 +6,11 @@
 	<f:render partial="Form/FieldLabel" arguments="{field:field}" />
 
 	<f:comment>
+		<!-- DESCRIPTION -->
+	</f:comment>
+	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
+
+	<f:comment>
 		<!-- ELEMENTS -->
 	</f:comment>
 	<f:variable name="additionalAttributes" value="{data-powermail-errors-container:'.powermail_field_error_container_{field.marker}', data-powermail-class-handler:'.powermail__fieldwrap_{field.marker} > fieldset > div'}" />
@@ -18,7 +23,7 @@
 				checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
 				id="powermail_field_{field.marker}_{index.cycle}"
 				additionalAttributes="{additionalAttributes}"
-				class="powermail__radio powermail__radio_{field.marker}" />
+				class="powermail__field powermail__field--radio powermail__field--radio_{field.marker}" />
 
 			<label for="powermail_field_{field.marker}_{index.cycle}">
 				<f:format.raw><span class="option-element" aria-hidden="true"></span><span class="option-text">{setting.label}</span></f:format.raw>
@@ -37,9 +42,4 @@
 			<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
 		</f:else>
 	</f:if>
-
-	<f:comment>
-		<!-- DESCRIPTION -->
-	</f:comment>
-	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
 </fieldset>

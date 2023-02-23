@@ -5,6 +5,11 @@
 </f:comment>
 <f:render partial="Form/FieldLabel" arguments="{_all}" />
 
+<f:comment>
+	<!-- DESCRIPTION -->
+</f:comment>
+<f:render partial="Form/FieldDescription" arguments="{field:field}" />
+
 <div class="{settings.styles.framework.fieldWrappingClasses}">
 	
 	<f:comment>
@@ -30,9 +35,4 @@
 		<!-- ERROR -->
 	</f:comment>
 	<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
-	
-	<f:comment>
-		<!-- DESCRIPTION -->
-	</f:comment>
-	<f:render partial="Form/FieldDescription" arguments="{field:field}" />
 </div>

@@ -8,12 +8,37 @@
 	-->
 </f:comment>
 
+<f:if condition="{ttContentData.header_layout} > 0">
+	<f:then>
+		<f:if condition="{ttContentData.subheader}">
+			<f:then>
+				<f:variable name="formErrorsHeaderType" value="{ttContentData.header_layout + 2}" />
+			</f:then>
+			<f:else>
+				<f:variable name="formErrorsHeaderType" value="{ttContentData.header_layout + 1}" />
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:if condition="{ttContentData.subheader}">
+			<f:then>
+				<f:variable name="formErrorsHeaderType" value="{settings.defaultHeaderLayout + 2}" />
+			</f:then>
+			<f:else>
+				<f:variable name="formErrorsHeaderType" value="{settings.defaultHeaderLayout + 1}" />
+			</f:else>
+		</f:if>
+	</f:else>
+</f:if>
 
+<f:if condition="{formErrorsHeaderType} > 6">
+	<f:variable name="formErrorsHeaderType" value="6" />
+</f:if>
 
 <f:form.validationResults>
 	<f:if condition="{validationResults.flattenedErrors}">
 		<div class="powermail__form-errors">
-			<h4 class="powermail__form-errors__header"><span class="powermail__form-errors__icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="powermail__form-errors__wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h4>
+			<h{formErrorsHeaderType} class="powermail__form-errors__header"><span class="powermail__form-errors__icon"><f:cObject typoscriptObjectPath="lib.attentionIcon" /></span><span class="powermail__form-errors__wording"><f:translate key="LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.errors.list.headline"/></span></h{formErrorsHeaderType}>
 
 			<f:variable name="errorCount" value="{f:count(subject:validationResults.flattenedErrors)}"/>
 

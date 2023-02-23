@@ -11,6 +11,7 @@
 <f:render partial="Form/FieldDescription" arguments="{field:field}" />
 
 <div class="{settings.styles.framework.fieldWrappingClasses}">
+
 	<f:comment>
 		<!-- FIELD -->
 	</f:comment>
@@ -22,18 +23,24 @@
 			<f:variable name="additionalAttributes" value="{vh:validation.validationDataAttribute(field:field)}" />
 		</f:else>
 	</f:if>
-	<f:form.textarea
-		cols="20"
-		rows="5"
-		id="powermail_field_{field.marker}"
+
+	<vh:form.selectField
+		options="{field.modifiedSettings}"
 		property="{field.marker}"
-		placeholder="{field.placeholder}"
-				value="{vh:misc.prefillField(field:field, mail:mail)}"
-				additionalAttributes="{additionalAttributes}"
-		class="powermail__field powermail__field--textarea {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail__field-error')}" />
-		
+		class="powermail__field powermail__field--select {settings.styles.framework.fieldClasses} {vh:validation.errorClass(field:field, class:'powermail__field-error')}"
+		id="powermail_field_{field.marker}"
+		additionalAttributes="{additionalAttributes}"
+		multiple="{field.multiselectForField}"
+		value="{vh:misc.prefillField(field:field, mail:mail)}" />
+
 	<f:comment>
 		<!-- ERROR -->
 	</f:comment>
 	<f:if condition="{fieldError}"><f:format.raw>{fieldError}</f:format.raw></f:if>
+
+	<f:if condition="{field.multiselect}">
+		<f:if condition="{settings.validation.client}">
+			<div class="powermail__field-error-container powermail__field-error-container_{field.marker}"></div>
+		</f:if>
+	</f:if>
 </div>
