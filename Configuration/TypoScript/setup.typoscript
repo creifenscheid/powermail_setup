@@ -1,2 +1,6 @@
 # Include basic powermail typoscript
 @import 'EXT:powermail/Configuration/TypoScript/Main/setup.typoscript'
+
+plugin.tx_powermail.settings.setup {
+    defaultHeaderLayout = {$styles.content.defaultHeaderType}
+}
