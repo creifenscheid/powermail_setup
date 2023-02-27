@@ -50,6 +50,16 @@
                 <source>I would like to report a barrier on the following page: </source>
                 <target>Ich möchte eine Barriere auf folgender Seite melden: </target>
             </trans-unit>
+
+            <!-- CONFIRMATION -->
+            <trans-unit id="form.confirmation.backToInput" resname="form.confirmation.backToInput">
+                <source>back to the form</source>
+                <target>zurück zum Formular</target>
+            </trans-unit>
+            <trans-unit id="form.confirmation.summary" resname="form.confirmation.summary">
+                <source>to the summary</source>
+                <target>zur Zusammenfassung</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

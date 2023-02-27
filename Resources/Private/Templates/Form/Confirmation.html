@@ -50,12 +50,12 @@ Show Confirmation Page
 					section="c{ttContentData.uid}"
 					name="field"
 					enctype="multipart/form-data"
-					class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
+					class="powermail__actionbar__item"
  					addQueryString="{settings.misc.addQueryString}"
 					additionalAttributes="{vh:validation.enableJavascriptValidationAndAjax(form: mail.form)}">
 				<f:render section="HiddenFields" arguments="{_all}" />
 				<f:form.submit
-						value="{f:translate(key: 'confirmation_prev')}"
+						value="{f:translate(key: 'LLL:EXT:powermail_setup/Resources/Private/Language/locallang.xlf:form.confirmation.backToInput')}"
 						additionalAttributes="{data-powermail-form-ajax:'confirmation'}"
 						class="cta cta--reset" />
 			</f:form>
@@ -76,7 +76,7 @@ Show Confirmation Page
 					section="c{ttContentData.uid}"
 					name="field"
 					enctype="multipart/form-data"
-					class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block"
+					class="powermail__actionbar__item"
 					addQueryString="{settings.misc.addQueryString}"
 					additionalAttributes="{vh:validation.enableJavascriptValidationAndAjax(form: mail.form)}">
 				<f:render section="HiddenFields" arguments="{_all}" />

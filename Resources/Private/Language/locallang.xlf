@@ -37,6 +37,14 @@
             <trans-unit id="form.prefill.barrierMessage" resname="form.prefill.barrierMessage">
                 <source>I would like to report a barrier on the following page: </source>
             </trans-unit>
+
+            <!-- CONFIRMATION -->
+            <trans-unit id="form.confirmation.backToInput" resname="form.confirmation.backToInput">
+                <source>back to the form</source>
+            </trans-unit>
+            <trans-unit id="form.confirmation.summary" resname="form.confirmation.summary">
+                <source>to the summary</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
