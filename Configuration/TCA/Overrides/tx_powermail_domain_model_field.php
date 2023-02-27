@@ -61,3 +61,6 @@ foreach ($autocompleteConfiguration as $group => $items) {
 // ADD TO TCA
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', 'autocomplete', 'input,textarea,select', 'before:description');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', '--palette--;;title_settings', '', 'replace:title');
+
+// ADJUSTMENTS OF FIELD:TYPE:TEXT
+$GLOBALS['TCA']['tx_powermail_domain_model_field']['columns']['text']['config']['enableRichtext'] = true;
