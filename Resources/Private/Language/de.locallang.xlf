@@ -45,23 +45,10 @@
                 <target>Eine der folgenden Optionen muss ausgewählt werden.</target>
             </trans-unit>
 
-            <!-- UNUSED -->
-
-            <trans-unit id="field.select.option" resname="field.select.option">
-                <source>Please choose %s</source>
-                <target>Bitte %s wählen</target>
-            </trans-unit>
-            <trans-unit id="form.errors.rendering.headline" resname="form.errors.rendering.headline">
-                <source>Configuration error</source>
-                <target>Konfigurationsfehler</target>
-            </trans-unit>
-            <trans-unit id="form.errors.rendering.message.requiredAttribute"
-                        resname="form.errors.rendering.message.requiredAttribute">
-                <source>Configuration parameter "%s" is missing but required. Please adjust your field configuration.
-                </source>
-                <target>Der Konfigurationsparameter "%s" fehlt, ist aber erforderlich. Bitte passen Sie Ihre
-                    Feldkonfiguration an.
-                </target>
+            <!-- PREFILL -->
+            <trans-unit id="form.prefill.barrierMessage" resname="form.prefill.barrierMessage">
+                <source>I would like to report a barrier on the following page: </source>
+                <target>Ich möchte eine Barriere auf folgender Seite melden: </target>
             </trans-unit>
         </body>
     </file>

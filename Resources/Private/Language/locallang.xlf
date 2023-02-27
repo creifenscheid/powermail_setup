@@ -33,18 +33,9 @@
                 <source>One of the following options must be selected.</source>
             </trans-unit>
 
-            <!-- UNUSED -->
-
-            <trans-unit id="field.select.option" resname="field.select.option">
-                <source>Please choose %s</source>
-            </trans-unit>
-            <trans-unit id="form.errors.rendering.headline" resname="form.errors.rendering.headline">
-                <source>Configuration error</source>
-            </trans-unit>
-            <trans-unit id="form.errors.rendering.message.requiredAttribute"
-                        resname="form.errors.rendering.message.requiredAttribute">
-                <source>Configuration parameter "%s" is missing but required. Please adjust your field configuration.
-                </source>
+            <!-- PREFILL -->
+            <trans-unit id="form.prefill.barrierMessage" resname="form.prefill.barrierMessage">
+                <source>I would like to report a barrier on the following page: </source>
             </trans-unit>
         </body>
     </file>

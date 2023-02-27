@@ -23,6 +23,10 @@ Therefor the form templating is adjusted, additional supportive fields are added
       - textarea fields
 - backend cleanup
   - removing fields, that I personally don't use, with a specific tsconfig setting
+- Report barrier configuration
+  - prefill for the following fields:
+    - subject: rename powermail marker to "barrier_subject"
+    - message: rename powermail marker to "barrier_message"
 
 ## Known bugs
 - field: date | aria-describedby attribute gets removed after focussing out
