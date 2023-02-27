@@ -16,7 +16,7 @@
 	<f:variable name="additionalAttributes" value="{data-powermail-errors-container:'.powermail_field_error_container_{field.marker}', data-powermail-class-handler:'.powermail__fieldwrap_{field.marker} > fieldset > div'}" />
 
 	<f:for each="{field.modifiedSettings}" as="setting" iteration="index">
-		<div class="{settings.styles.framework.checkClasses} {vh:validation.errorClass(field:field, class:'powermail_field_error')}">
+		<div class="{settings.styles.framework.checkClasses} {vh:validation.errorClass(field:field, class:'error')}">
 			<f:form.checkbox
 				property="{field.marker}."
 				value="{setting.value}"
