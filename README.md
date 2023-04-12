@@ -12,6 +12,7 @@ Therefor the form templating is adjusted, additional supportive fields are added
   - improves accessibility in forms by
     - refactoring label rendering
     - adding description rendering
+    - adding error list before the form
     - refactoring field rendering for
       - checkboxes
       - date inputs
