@@ -30,18 +30,18 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Extension to set up and configure EXT:powermail',
     'category' => 'fe',
     'author' => 'C. Reifenscheid',
-    'version' => '11.0.0',
+    'version' => '12.0.0',
     'state' => 'stable',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
-            'powermail' => '10.0.0-10.9.99',
-            'site_setup' => '11.0.0-11.9.99'
-        ]
+            'typo3' => '12.4.0-12.4.99',
+            'powermail' => '12.1.0-12.9.99',
+            'site_setup' => '12.0.0-12.9.99',
+        ],
     ],
     'autoload' => [
         'psr-4' => [
-            'CReifenscheid\\PowermailSetup\\' => 'Classes'
-        ]
-    ]
+            'CReifenscheid\\PowermailSetup\\' => 'Classes',
+        ],
+    ],
 ];
