@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') || die();
 
 $extensionKey = 'powermail_setup';
 $table = 'tx_powermail_domain_model_field';
@@ -14,8 +14,8 @@ $l10n = 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_' . 
             'label' => $l10n . 'hide_label',
             'config' => [
                 'type' => 'check',
-                'default' => false
-            ]
+                'default' => false,
+            ],
         ],
         'autocomplete' => [
             'label' => $l10n . 'autocomplete',
@@ -24,10 +24,10 @@ $l10n = 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_' . 
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['', '']
-                ]
-            ]
-        ]
+                    ['label' => '', 'value' => ''],
+                ],
+            ],
+        ],
     ]
 );
 
@@ -40,11 +40,11 @@ $groupPrefix = 'autocomplete_';
 $groupLabelPrefix = $l10n . 'autocomplete.group.';
 $itemLabelPrefix = $l10n . 'autocomplete.item.';
 $autocompleteConfiguration = [
-    'personal' => ['name','honorific-prefix','sex', 'given-name','additional-name','family-name','honorific-suffix','bday'],
-    'address' => ['street-address','address-line1','address-line2','address-line3','address-level2','postal-code', 'address-level1', 'country-name'],
-    'contact' => ['tel', 'tel-national','email'],
-    'job' => ['organization-title','organization'],
-    'user' => ['username','current-password','new-password']
+    'personal' => ['name', 'honorific-prefix', 'sex', 'given-name', 'additional-name', 'family-name', 'honorific-suffix', 'bday'],
+    'address' => ['street-address', 'address-line1', 'address-line2', 'address-line3', 'address-level2', 'postal-code', 'address-level1', 'country-name'],
+    'contact' => ['tel', 'tel-national', 'email'],
+    'job' => ['organization-title', 'organization'],
+    'user' => ['username', 'current-password', 'new-password'],
 ];
 
 foreach ($autocompleteConfiguration as $group => $items) {
@@ -56,7 +56,7 @@ foreach ($autocompleteConfiguration as $group => $items) {
 }
 
 // PALETTES
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette ('tx_powermail_domain_model_field', 'title_settings', 'title,hide_label');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tx_powermail_domain_model_field', 'title_settings', 'title,hide_label');
 
 // ADD TO TCA
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_powermail_domain_model_field', 'autocomplete', 'input,textarea,select', 'before:description');

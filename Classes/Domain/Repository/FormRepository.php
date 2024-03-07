@@ -1,4 +1,5 @@
 <?php
+
 namespace CReifenscheid\PowermailSetup\Domain\Repository;
 
 /***************************************************************
@@ -26,11 +27,4 @@ namespace CReifenscheid\PowermailSetup\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class FormRepository
- *
- * @package CReifenscheid\PowermailSetup\Domain\Repository
- */
-class FormRepository extends \In2code\Powermail\Domain\Repository\FormRepository
-{
-}
+class FormRepository extends \In2code\Powermail\Domain\Repository\FormRepository {}

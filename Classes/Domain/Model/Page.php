@@ -29,11 +29,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Page
- *
- * @package CReifenscheid\PowermailSetup\Domain\Model
- */
 class Page extends \In2code\Powermail\Domain\Model\Page
 {
     /**
@@ -44,17 +39,15 @@ class Page extends \In2code\Powermail\Domain\Model\Page
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CReifenscheid\PowermailSetup\Domain\Model\Field>
      */
-    public function getFields() : ObjectStorage
+    public function getFields(): ObjectStorage
     {
         return $this->fields;
     }
 
     /**
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CReifenscheid\PowermailSetup\Domain\Model\Field> $fields
-     *
-     * @return void
      */
-    public function setFields(ObjectStorage $fields) : void
+    public function setFields(ObjectStorage $fields): void
     {
         $this->fields = $fields;
     }

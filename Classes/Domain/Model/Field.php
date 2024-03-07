@@ -1,4 +1,5 @@
 <?php
+
 namespace CReifenscheid\PowermailSetup\Domain\Model;
 
 /***************************************************************
@@ -26,14 +27,10 @@ namespace CReifenscheid\PowermailSetup\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Field
- *
- * @package CReifenscheid\PowermailSetup\Domain\Model
- */
 class Field extends \In2code\Powermail\Domain\Model\Field
 {
     protected bool $hideLabel = false;
+
     protected string $autocomplete = '';
 
     public function isHideLabel(): bool
@@ -46,12 +43,12 @@ class Field extends \In2code\Powermail\Domain\Model\Field
         $this->hideLabel = $hideLabel;
     }
 
-    public function getAutocomplete() : string
+    public function getAutocomplete(): string
     {
         return $this->autocomplete;
     }
 
-    public function setAutocomplete(string $autocomplete) : void
+    public function setAutocomplete(string $autocomplete): void
     {
         $this->autocomplete = $autocomplete;
     }
