@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext"
-          original="EXT:powermail_setup.git/Resources/Private/Language/locallang.xlf" date="2023-02-13T11:55:00Z"
-          product-name="powermail_setup">
-        <header/>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" original="EXT:powermail_setup.git/Resources/Private/Language/locallang.xlf" datatype="plaintext" product-name="powermail_setup" date="2024-03-07T09:27:35+01:00">
+        <header></header>
         <body>
-            <trans-unit id="form.requirement.hint" resname="form.requirement.hint">
-                <source>All fields marked "*" must be completed.</source>
-                <target>Alle mit "*" gekennzeichneten Felder müssen ausgefüllt werden.</target>
+            <trans-unit id="form.confirmation.backToInput" resname="form.confirmation.backToInput">
+                <source>back to the form</source>
+                <target>zurück zum Formular</target>
             </trans-unit>
-            <trans-unit id="form.navigation.label" resname="form.navigation.label">
-                <source>Form steps</source>
-                <target>Formularschritte</target>
+            <trans-unit id="form.confirmation.summary" resname="form.confirmation.summary">
+                <source>to the summary</source>
+                <target>zur Zusammenfassung</target>
+            </trans-unit>
+            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
+                <source>One of the following options must be selected.</source>
+                <target>Eine der folgenden Optionen muss ausgewählt werden.</target>
+            </trans-unit>
+            <trans-unit id="form.errors.list.description" resname="form.errors.list.description">
+                <source>There were %s errors when filling out the form. Please fix them and resubmit the corrected form.</source>
+                <target>Beim Ausfüllen des Formulars gab es %s Fehler. Bitte beheben Sie diese und senden Sie das korrigierte Formular erneut ab.</target>
+            </trans-unit>
+            <trans-unit id="form.errors.list.description.single" resname="form.errors.list.description.single">
+                <source>There were an error when filling out the form. Please fix it and resubmit the corrected form.</source>
+                <target>Beim Ausfüllen des Formulars trat ein Fehler auf. Bitte beheben Sie diesen und senden Sie das korrigierte Formular erneut ab.</target>
             </trans-unit>
             <trans-unit id="form.errors.list.headline" resname="form.errors.list.headline">
                 <source>Form errors</source>
                 <target>Formularfehler</target>
             </trans-unit>
-            <trans-unit id="form.errors.list.description" resname="form.errors.list.description">
-                <source>There were %s errors when filling out the form. Please fix them and resubmit the corrected
-                    form.
-                </source>
-                <target>Beim Ausfüllen des Formulars gab es %s Fehler. Bitte beheben Sie diese und senden Sie das
-                    korrigierte Formular erneut ab.
-                </target>
+            <trans-unit id="form.navigation.label" resname="form.navigation.label">
+                <source>Form steps</source>
+                <target>Formularschritte</target>
             </trans-unit>
-            <trans-unit id="form.errors.list.description.single" resname="form.errors.list.description.single">
-                <source>There were an error when filling out the form. Please fix it and resubmit the corrected form.
-                </source>
-                <target>Beim Ausfüllen des Formulars trat ein Fehler auf. Bitte beheben Sie diesen und senden Sie das
-                    korrigierte Formular erneut ab.
-                </target>
+            <trans-unit id="form.prefill.barrierMessage" resname="form.prefill.barrierMessage">
+                <source>I would like to report a barrier on the following page: </source>
+                <target>Ich möchte eine Barriere auf folgender Seite melden: </target>
+            </trans-unit>
+            <trans-unit id="form.requirement.hint" resname="form.requirement.hint">
+                <source>All fields marked &#34;*&#34; must be completed.</source>
+                <target>Alle mit &#34;*&#34; gekennzeichneten Felder müssen ausgefüllt werden.</target>
             </trans-unit>
             <trans-unit id="form.steps.next.label" resname="form.steps.next.label">
                 <source>Next step: %s</source>
@@ -39,26 +46,6 @@
             <trans-unit id="form.steps.prev.label" resname="form.steps.prev.label">
                 <source>Previous step: %s</source>
                 <target>Vorheriger Schritt: %s</target>
-            </trans-unit>
-            <trans-unit id="form.elementsGroup.mandatory" resname="form.elementsGroup.mandatory">
-                <source>One of the following options must be selected.</source>
-                <target>Eine der folgenden Optionen muss ausgewählt werden.</target>
-            </trans-unit>
-
-            <!-- PREFILL -->
-            <trans-unit id="form.prefill.barrierMessage" resname="form.prefill.barrierMessage">
-                <source>I would like to report a barrier on the following page: </source>
-                <target>Ich möchte eine Barriere auf folgender Seite melden: </target>
-            </trans-unit>
-
-            <!-- CONFIRMATION -->
-            <trans-unit id="form.confirmation.backToInput" resname="form.confirmation.backToInput">
-                <source>back to the form</source>
-                <target>zurück zum Formular</target>
-            </trans-unit>
-            <trans-unit id="form.confirmation.summary" resname="form.confirmation.summary">
-                <source>to the summary</source>
-                <target>zur Zusammenfassung</target>
             </trans-unit>
         </body>
     </file>

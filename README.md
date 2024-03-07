@@ -32,6 +32,6 @@ Therefor the form templating is adjusted, additional supportive fields are added
 - field: date | aria-describedby attribute gets removed after focussing out
 
 ## Client side validation
-At the moment EXT:powermails client side (javascript) validation is disabled. This has to be extended as followed:
+At the moment EXT:powermail client side (javascript) validation is disabled. This has to be extended as followed:
 - adding an icon to the messages
 - adjust field labelling setup to read the error as well

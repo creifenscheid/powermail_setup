@@ -1,40 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext"
-          original="EXT:powermail_setup.git/Resources/Private/Language/locallang_tx_powermail_domain_model_field.xlf"
-          date="2023-02-13T11:55:00Z" product-name="powermail_setup">
-        <header/>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" original="EXT:powermail_setup.git/Resources/Private/Language/locallang_tx_powermail_domain_model_field.xlf" datatype="plaintext" product-name="powermail_setup" date="2024-03-07T09:27:47+01:00">
+        <header></header>
         <body>
-            <trans-unit id="hide_label" resname="hide_label">
-                <source>Hide label</source>
-                <target>Label verbergen</target>
-            </trans-unit>
-
             <trans-unit id="autocomplete" resname="autocomplete">
-                <source>Autocomplete attribute</source>
+                <source>Autocomplete</source>
                 <target>Autovervollständigungs-Attribut</target>
             </trans-unit>
             <trans-unit id="autocomplete.description" resname="autocomplete.description">
-                <source>Please select the type of information to be entered in the field in order to insert the correct
-                    content by auto-completion.
-                </source>
-                <target>Bitte wählen Sie den Informationstypen aus, welcher im Feld angegeben werden soll, um den
-                    korrekten Inhalt durch die Autovervollständigung einzufügen.
-                </target>
-            </trans-unit>
-
-            <!-- AUTOCOMPLETE GROUPS -->
-            <trans-unit id="autocomplete.group.personal" resname="autocomplete.group.personal">
-                <source>Personal information</source>
-                <target>Persönliche Daten</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.group.job" resname="autocomplete.group.job">
-                <source>Job information</source>
-                <target>Informationen zum Beruf</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.group.user" resname="autocomplete.group.user">
-                <source>User account information</source>
-                <target>Informationen zum Benutzerkonto</target>
+                <source>Please select the type of information to be entered in the field in order to insert the correct content by auto-completion.</source>
+                <target>Bitte wählen Sie den Informationstypen aus, welcher im Feld angegeben werden soll, um den korrekten Inhalt durch die Autovervollständigung einzufügen.</target>
             </trans-unit>
             <trans-unit id="autocomplete.group.address" resname="autocomplete.group.address">
                 <source>Address information</source>
@@ -44,46 +19,29 @@
                 <source>Contact information</source>
                 <target>Kontaktinformationen</target>
             </trans-unit>
-
-            <!-- AUTOCOMPLETE ITEMS -->
-            <!-- PERSONAL -->
-            <trans-unit id="autocomplete.item.name" resname="autocomplete.item.name">
-                <source>Full name</source>
-                <target>Vollständiger Name</target>
+            <trans-unit id="autocomplete.group.job" resname="autocomplete.group.job">
+                <source>Job information</source>
+                <target>Informationen zum Beruf</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.honorific-prefix" resname="autocomplete.item.honorific-prefix">
-                <source>Prefix or title (e.g. "Mr.", "Ms.", "Dr.")</source>
-                <target>Präfix oder Titel (z.B. "Herr", "Frau", "Dr.")</target>
+            <trans-unit id="autocomplete.group.personal" resname="autocomplete.group.personal">
+                <source>Personal information</source>
+                <target>Persönliche Daten</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.sex" resname="autocomplete.item.sex">
-                <source>Gender identity</source>
-                <target>Geschlechtliche Identität</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.given-name" resname="autocomplete.item.given-name">
-                <source>First name</source>
-                <target>Vorname</target>
+            <trans-unit id="autocomplete.group.user" resname="autocomplete.group.user">
+                <source>User account information</source>
+                <target>Informationen zum Benutzerkonto</target>
             </trans-unit>
             <trans-unit id="autocomplete.item.additional-name" resname="autocomplete.item.additional-name">
                 <source>Middle names</source>
                 <target>Mittlere Namen</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.family-name" resname="autocomplete.item.family-name">
-                <source>Family name</source>
-                <target>Familienname</target>
+            <trans-unit id="autocomplete.item.address-level1" resname="autocomplete.item.address-level1">
+                <source>Federal state</source>
+                <target>Bundesland</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.honorific-suffix" resname="autocomplete.item.honorific-suffix">
-                <source>Suffix (e.g., "Jr.", "B.Sc.", "II")</source>
-                <target>Suffix (z.B. "Jr.", "B.Sc.", "II")</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.bday" resname="autocomplete.item.bday">
-                <source>Birthday</source>
-                <target>Geburtstag</target>
-            </trans-unit>
-
-            <!-- ADDRESS -->
-            <trans-unit id="autocomplete.item.street-address" resname="autocomplete.item.street-address">
-                <source>Street address (multiple lines, newlines preserved)</source>
-                <target>Straße (mehrere Zeilen, Zeilenumbrüche erhalten)</target>
+            <trans-unit id="autocomplete.item.address-level2" resname="autocomplete.item.address-level2">
+                <source>City</source>
+                <target>Stadt</target>
             </trans-unit>
             <trans-unit id="autocomplete.item.address-line1" resname="autocomplete.item.address-line1">
                 <source>Street address (one line per field, line 1)</source>
@@ -97,24 +55,66 @@
                 <source>Street address (one line per field, line 3)</source>
                 <target>Straße und Hausnummer (eine Zeile pro Feld, Zeile 3)</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.address-level2" resname="autocomplete.item.address-level2">
-                <source>City</source>
-                <target>Stadt</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.postal-code" resname="autocomplete.item.postal-code">
-                <source>ZIP code</source>
-                <target>Postleitzahl</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.address-level1" resname="autocomplete.item.address-level1">
-                <source>Federal state</source>
-                <target>Bundesland</target>
+            <trans-unit id="autocomplete.item.bday" resname="autocomplete.item.bday">
+                <source>Birthday</source>
+                <target>Geburtstag</target>
             </trans-unit>
             <trans-unit id="autocomplete.item.country-name" resname="autocomplete.item.country-name">
                 <source>Country</source>
                 <target>Land</target>
             </trans-unit>
-
-            <!-- CONTACT -->
+            <trans-unit id="autocomplete.item.current-password" resname="autocomplete.item.current-password">
+                <source>Password</source>
+                <target>Passwort</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.email" resname="autocomplete.item.email">
+                <source>E-mail address</source>
+                <target>E-Mail-Adresse</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.family-name" resname="autocomplete.item.family-name">
+                <source>Family name</source>
+                <target>Familienname</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.given-name" resname="autocomplete.item.given-name">
+                <source>First name</source>
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.honorific-prefix" resname="autocomplete.item.honorific-prefix">
+                <source>Prefix or title (e.g. &#34;Mr.&#34;, &#34;Ms.&#34;, &#34;Dr.&#34;)</source>
+                <target>Präfix oder Titel (z.B. &#34;Herr&#34;, &#34;Frau&#34;, &#34;Dr.&#34;)</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.honorific-suffix" resname="autocomplete.item.honorific-suffix">
+                <source>Suffix (e.g., &#34;Jr.&#34;, &#34;B.Sc.&#34;, &#34;II&#34;)</source>
+                <target>Suffix (z.B. &#34;Jr.&#34;, &#34;B.Sc.&#34;, &#34;II&#34;)</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.name" resname="autocomplete.item.name">
+                <source>Full name</source>
+                <target>Vollständiger Name</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.new-password" resname="autocomplete.item.new-password">
+                <source>New password</source>
+                <target>Neues Passwort</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.organization" resname="autocomplete.item.organization">
+                <source>Company name</source>
+                <target>Firmenname</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.organization-title" resname="autocomplete.item.organization-title">
+                <source>Job title</source>
+                <target>Berufsbezeichnung</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.postal-code" resname="autocomplete.item.postal-code">
+                <source>ZIP code</source>
+                <target>Postleitzahl</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.sex" resname="autocomplete.item.sex">
+                <source>Gender identity</source>
+                <target>Geschlechtliche Identität</target>
+            </trans-unit>
+            <trans-unit id="autocomplete.item.street-address" resname="autocomplete.item.street-address">
+                <source>Street address (multiple lines, newlines preserved)</source>
+                <target>Straße (mehrere Zeilen, Zeilenumbrüche erhalten)</target>
+            </trans-unit>
             <trans-unit id="autocomplete.item.tel" resname="autocomplete.item.tel">
                 <source>Full telephone number, including country code</source>
                 <target>Vollständige Telefonnummer, einschließlich Landesvorwahl</target>
@@ -123,33 +123,13 @@
                 <source>Telephone number without country code, with internal country code.</source>
                 <target>Telefonnummer ohne Landesvorwahl, ggf. mit einer landesinternen Vorwahl</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.email" resname="autocomplete.item.email">
-                <source>E-mail address</source>
-                <target>E-Mail-Adresse</target>
-            </trans-unit>
-
-            <!-- JOB -->
-            <trans-unit id="autocomplete.item.organization-title" resname="autocomplete.item.organization-title">
-                <source>Job title</source>
-                <target>Berufsbezeichnung</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.organization" resname="autocomplete.item.organization">
-                <source>Company name</source>
-                <target>Firmenname</target>
-            </trans-unit>
-
-            <!-- USER -->
             <trans-unit id="autocomplete.item.username" resname="autocomplete.item.username">
                 <source>Username</source>
                 <target>Benutzername</target>
             </trans-unit>
-            <trans-unit id="autocomplete.item.current-password" resname="autocomplete.item.current-password">
-                <source>Password</source>
-                <target>Passwort</target>
-            </trans-unit>
-            <trans-unit id="autocomplete.item.new-password" resname="autocomplete.item.new-password">
-                <source>New password</source>
-                <target>Neues Passwort</target>
+            <trans-unit id="hide_label" resname="hide_label">
+                <source>Hide label</source>
+                <target>Label verbergen</target>
             </trans-unit>
         </body>
     </file>
