@@ -32,12 +32,12 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Form extends \In2code\Powermail\Domain\Model\Form
 {
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CReifenscheid\PowermailSetup\Domain\Model\Page>|null
+     * @var ObjectStorage<Page>|null
      */
     protected $pages;
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CReifenscheid\PowermailSetup\Domain\Model\Page>
+     * @return ObjectStorage<Page>
      */
     public function getPages(): ObjectStorage
     {
@@ -45,7 +45,7 @@ class Form extends \In2code\Powermail\Domain\Model\Form
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CReifenscheid\PowermailSetup\Domain\Model\Page> $pages
+     * @param ObjectStorage<Page> $pages
      */
     public function setPages(ObjectStorage $pages): void
     {
