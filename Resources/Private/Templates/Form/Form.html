@@ -21,7 +21,8 @@ Render Powermail Form
                     enctype="multipart/form-data"
                     additionalAttributes="{vh:validation.enableJavascriptValidationAndAjax(form:form)}"
                     addQueryString="{settings.misc.addQueryString}"
-                    class="powermail__form powermail_form_{form.uid} {form.css} {settings.styles.framework.formClasses} {vh:misc.morestepClass(activate:settings.main.moresteps)}">
+                    class="powermail__form powermail_form_{form.uid} {form.css} {settings.styles.framework.formClasses} {vh:misc.morestepClass(activate:settings.main.moresteps)}"
+                    id="powermail-form-{ttContentData.uid}">
 
                     <f:if condition="{form.css} != 'nolabel'">
                         <h3>{form.title}</h3>
