@@ -1,0 +1,5 @@
+lib.attentionIcon = SVG
+lib.attentionIcon {
+  renderMode = inline
+  src = {$plugin.tx_powermailsetup.settings.attentionIcon}
+}

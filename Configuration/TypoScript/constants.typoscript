@@ -14,3 +14,10 @@ plugin.tx_powermail {
         }
     }
 }
+
+plugin.tx_powermailsetup {
+  settings {
+    # cat=Powermail setup/file/a; type=string; label=LLL:EXT:powermail_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:attentionIcon
+    attentionIcon = EXT:powermail_setup/Resources/Public/Icons/Attention.svg
+  }
+}
